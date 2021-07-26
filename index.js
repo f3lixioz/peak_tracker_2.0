@@ -123,7 +123,4 @@ app.listen(PORT, () => {
 });
 
 app.use(express.static("./client/build"));
-app.get("*", (req, res) => {
-    res.sendFile("client/build/index.html");
-  });
   

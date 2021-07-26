@@ -10,14 +10,6 @@ app.use(express.json());
 // app.use(morgan('tiny'));
 
 
-//For deployment
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
-});
-
-app.use(express.static("./client/build"));
-
 //Routes
 
 //Edit 14'er summit
@@ -123,3 +115,15 @@ app.delete("/peak/:id", async(req, res) => {
         console.error(err.message)
     }
 })
+
+//For deployment
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+});
+
+app.use(express.static("./client/build"));
+app.get("*", (req, res) => {
+    res.sendFile("client/build/index.html");
+  });
+  

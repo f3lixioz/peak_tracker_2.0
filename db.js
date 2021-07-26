@@ -10,6 +10,6 @@ require("dotenv").config();
 //     database: "peak_tracker"
 // });
 
-const pool = new Pool({connnectionString: process.env.DATABASE_URL, sslmode: isProduction=require});
+const pool = new Pool({connnectionString: process.env.DATABASE_URL, sslmode=require});
 
 module.exports = pool;

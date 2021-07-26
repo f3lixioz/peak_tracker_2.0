@@ -9,7 +9,7 @@ const EditDate = ({peak}) => {
 
       try {
           const body = {bag_date};
-          const response = await fetch(`http://localhost:5000/peak/${peak.peak_id}`,{
+          const response = await fetch(`/peak/${peak.peak_id}`,{
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(body)
